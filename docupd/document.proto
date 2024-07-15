@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package docupd;
+
+option go_package = "./";
+
+message Document {
+    string Url = 1;             // URL документа, его уникальный идентификатор
+    uint64 PubDate = 2;         // время заявляемой публикации документа
+    uint64 FetchTime = 3;       // время получения данного обновления документа, может рассматриваться как идентификатор версии. Пара (Url, FetchTime) уникальна.
+    string Text = 4;            // текст документа
+    uint64 FirstFetchTime = 5;  // изначально отсутствует, необходимо заполнить
+}
